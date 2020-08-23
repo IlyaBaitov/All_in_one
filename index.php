@@ -33,6 +33,7 @@
 						while ($item = $query->fetch(PDO::FETCH_OBJ))
 						{
 							echo "<li><b>" . $item->task . " </b><a href='add_del_tasks/delete.php?id=".$item->id."'><button>Done!</button></a></li>";
+							echo "<a href='update/update.php?id=".$item->id."&task=".$item->task."'><button>Change value</button></a>";
 						}
 						echo "</ul>";
 				?>
@@ -64,7 +65,6 @@
 					// Validation
 						if($search_request !== "")
 						{
-
 							// Distribution RADIO from search
 								if($search_radio == "Tasks")
 								{
