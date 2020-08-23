@@ -8,6 +8,7 @@
 <body>
 
 	<?php
+	// Variables from "index.php" => "TASKS"
 		$id = $_GET["id"];
 		$value_task = $_GET["task"] 
 	?>
@@ -18,6 +19,7 @@
 	</form>
 
 	<?php
+	// Variable from "update.php" => "TASKS"
 		@$task_up = $_POST["task_up"];
 
 		if($task_up == "")

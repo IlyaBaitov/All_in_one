@@ -1,4 +1,5 @@
 <?php
+// Variables from "index.php" => "USERS" => "sign_in"
 	$login = strip_tags(trim($_POST["login"]));
 	$pass = strip_tags(trim($_POST["pass"]));
 

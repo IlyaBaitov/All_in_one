@@ -1,7 +1,9 @@
 <?php
+// Variables from "index.php" => "USERS" => "sign_up"
 	$login = strip_tags(trim($_POST["login"]));
 	$pass = strip_tags(trim($_POST["pass"]));
 
+// Validation
 	if($login == "" || $pass == "")
 	{
 		echo "Enter all fields </br> <a href='../index.php'>Enter</a>";

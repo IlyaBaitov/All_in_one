@@ -16,7 +16,7 @@
 
 
 
-
+<!--               					Col for "TASKS"									 -->
 			<div class="col">
 				<h1>Tasks</h1>
 				<form action="add_del_tasks/add.php" method="post">
@@ -29,11 +29,12 @@
 						$sql = "SELECT * FROM `tasks` ORDER BY `id` DESC";
 						$query = $pdo->query($sql);
 
+					// Echo tasks with "DELETE" and "UPDATE"
 						echo "<ul>";
 						while ($item = $query->fetch(PDO::FETCH_OBJ))
 						{
-							echo "<li><b>" . $item->task . " </b><a href='add_del_tasks/delete.php?id=".$item->id."'><button>Done!</button></a></li>";
-							echo "<a href='update/update.php?id=".$item->id."&task=".$item->task."'><button>Change value</button></a>";
+							echo "<li><b>" . $item->task . " </b><a href='add_del_tasks/delete.php?id=".$item->id."'><button>Done!</button></a></li>"; // DELETE
+							echo "<a href='update/update.php?id=".$item->id."&task=".$item->task."'><button>Change value</button></a>"; // UPDATE
 						}
 						echo "</ul>";
 				?>
@@ -41,7 +42,7 @@
 
 
 
-
+<!--               					Col for "SEARCH"									 -->
 			<div class="col">
 				<h1>Search</h1>
 				<form action="#" method="get">
@@ -58,7 +59,7 @@
 				</form>
 
 				<?php
-					// 	Variables from search
+					// 	Variables from "SEARCH"
 						@$search_request = strip_tags(trim($_GET["search_request"]));
 						@$search_radio = $_GET["search_radio"];
 
@@ -102,7 +103,6 @@
 
 								elseif($search_radio == "")
 								{
-									echo "Select 'Tasks' or 'Users' </br>";
 									echo "Enter your request";
 								}
 
@@ -113,6 +113,9 @@
 				?>
 			</div>
 
+
+
+<!--               					Col for "SIGN UP" and "SIGN IN"									 -->
 			<?php if(@$_COOKIE["user"] == ""): ?>
 				<div class="col">
 					<h1>Sign up</h1>

@@ -1,4 +1,5 @@
 <?php
+// Variables from "index.php" => "TASKS"
 	$id = $_GET["id"];
 
 // DB connection "TASKS"

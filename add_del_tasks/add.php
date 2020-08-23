@@ -1,4 +1,5 @@
 <?php
+// Variables from "index.php" => "TASKS"
 	$task = strip_tags(trim($_POST["task"]));
 
 	if(empty($task))
