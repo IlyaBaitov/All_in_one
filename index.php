@@ -1,3 +1,8 @@
+<?php
+// DB connection
+	require("config/db.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +25,6 @@
 				</form>
 
 				<?php
-					// DB connection "TASKS"
-						require("config/db.php");
-
 					// SQL request "TASKS"
 						$sql = "SELECT * FROM `tasks` ORDER BY `id` DESC";
 						$query = $pdo->query($sql);
@@ -69,9 +71,6 @@
 									// SQL request for "TASKS"
 										$sql = "SELECT * FROM `tasks` WHERE `task` LIKE '%$search_request%' ";
 
-									// DB connection "SEARCH"
-										require("config/db.php");
-
 									// SQL request "SEARCH"
 										$query = $pdo->query($sql);
 
@@ -88,9 +87,6 @@
 								{
 									// SQL request for "USERS"
 										$sql = "SELECT * FROM `users` WHERE `login` LIKE '%$search_request%' ";
-
-									// DB connection "SEARCH"
-										require("config/db.php");
 
 									// SQL request "SEARCH"
 										$query = $pdo->query($sql);
